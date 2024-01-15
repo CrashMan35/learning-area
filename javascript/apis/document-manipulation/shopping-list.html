@@ -31,6 +31,25 @@
     </ul>
 
     <script>
+        const shopList=document.querySelector("ul");
+        const inputEle=document.querySelector("input");
+        const addButton=document.querySelector("button");
+        addButton.addEventListener('click',(event)=>{
+            const inputValue=inputEle.value;
+            inputEle.value="";
+            const listItem=document.createElement("li");
+            const span=document.createElement("span");
+            const deleteButton=document.createElement("button");
+            listItem.appendChild(span);
+            listItem.appendChild(deleteButton);
+            span.textContent=inputValue;
+            deleteButton.textContent="Delete";
+            shopList.appendChild(listItem);
+            deleteButton.addEventListener('click',(event)=>{
+                listItem.remove();
+            })
+            inputEle.focus();
+          })
 
     </script>
   </body>

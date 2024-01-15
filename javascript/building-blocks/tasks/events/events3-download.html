@@ -42,7 +42,10 @@
   const buttonBar = document.querySelector('.button-bar');
 
   // Add your code here
-
+  buttonBar.addEventListener('click',(event)=>{
+    const buttonColor=event.target.textContent;
+    event.currentTarget.style.backgroundColor=buttonColor;
+  })
   </script>
   </body>
 </html>
